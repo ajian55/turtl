@@ -1,0 +1,11 @@
+<div class="content">
+	<h1>{{t 'Have an idea? A problem?'}}</h1>
+</div>
+
+<textarea name="text" rows="4" cols="80" tabindex="3" placeholder="{{t 'Give your feedback'}}"></textarea>
+<div class="buttons">
+	<div class="button login">
+		<input type="submit" class="button" {{#unless connected}}disabled{{/unless}} value="{{t 'Send'}}">
+	</div>
+</div>
+

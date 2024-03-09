@@ -1,0 +1,78 @@
+{{{content}}}
+
+{{#if note.color_name}}
+	<div class="color {{note.color_name}}">&nbsp;</div>
+{{/if}}
+
+{{#if has_file}}
+	<div class="file download {{#if note.file.encrypting}}encrypting{{/if}}">
+		<strong>
+			<a href="#open" rel="download">
+				{{icon 'attachment'}}
+				{{svg 'loading'}}
+				{{note.file.name}}
+			</a>
+		</strong>
+	</div>
+{{/if}}
+
+{{#if show_info}}
+	<div class="info-container">
+		<div class="tags-container">
+			{{#if tags}}
+				<ul>
+					<li class="icon">{{icon 'tag'}}</li>
+					{{#each tags}}
+						<li>{{this}}</li>
+					{{/each}}
+				</ul>
+			{{/if}}
+		</div>
+		{{#if board}}
+		<div class="board">{{icon 'board'}} {{board}}</div>
+		{{/if}}
+	</div>
+{{/if}}
+
+<div class="note-gutter">
+	{{#if empty}}
+		<p class="empty">{{t '(empty note)'}}</p>
+	{{else}}
+		<div class="content text">
+			{{#equal note.type 'password'}}
+				<h1 dir="auto" class="main-title password">
+					<a href="#" rel="password">
+						{{icon 'lock'}}
+						{{#if note.title}}
+							{{note.title}}
+						{{else}}
+							Password
+						{{/if}}
+					</a>
+				</h1>
+				<div class="show-password">
+					<form class="standard-form">
+						{{#if note.username}}
+							<input type="text" dir="auto" name="username" value="{{note.username}}" readonly>
+						{{/if}}
+						<input type="password" dir="auto" name="password" value="********" readonly>
+					</form>
+				</div>
+			{{else}}
+				{{#if note.title}}
+					<h1 dir="auto" class="main-title">
+						{{#if note.url}}<a dir="auto" href="{{note.url}}" target="_blank">{{/if}}
+						{{note.title}}
+						{{#if note.url}}</a>{{/if}}
+					</h1>
+				{{/if}}
+			{{/equal}}
+			{{#if has_body}}
+				<div class="body">
+					{{{note-body note.text}}}
+				</div>
+			{{/if}}
+		</div>
+	{{/if}}
+</div>
+

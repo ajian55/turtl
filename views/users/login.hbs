@@ -1,0 +1,20 @@
+<input type="email" name="username" placeholder="{{t 'Email'}}" value="{{state.last_username}}" tabindex="1" autocomplete="off" autocorrect="off" autocapitalize="off">
+<input type="password" name="password" placeholder="{{t 'Passphrase'}}" autocomplete="off" autocorrect="off" tabindex="2">
+{{remember-me autologin}}
+
+<div class="buttons">
+	<div class="button login">
+		<input type="submit" class="button" value="{{t 'Login'}}">
+	</div>
+	<p class="load">
+		{{svg 'loading'}}
+	</p>
+	<p>
+		<a href="/users/welcome">{{t 'Create an account'}}</a>
+	</p>
+</div>
+
+{{{advanced}}}
+
+<a class="trouble" target="_blank" href="https://turtlapp.com/docs/troubleshooting/logging-in/">{{t 'Trouble logging in?'}}</a>
+

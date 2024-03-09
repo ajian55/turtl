@@ -1,0 +1,45 @@
+@import '../variables';
+
+.turtl-modal.search {width: 90%; background: rgba(255, 255, 255, 1);}
+.turtl-modal.search {
+	header {width: 90%;}
+	@media @desktop {
+		& {background: rgba(255, 255, 255, .92);}
+		&, header {width: 350px;}
+	}
+}
+
+.search-filters {padding: 0 6px 0 6px;}
+.search-filters {
+	@media @desktop {
+		& {padding-left: 12px; padding-right: 12px;}
+	}
+	.clear-search {margin: 0 0 16px 0; border-bottom: 1px solid @theme_border;}
+	.clear-search {
+		a {display: block; padding: 16px; font-size: 16px; text-align: center;}
+		icon {margin-right: 8px; opacity: 0.5;}
+	}
+	.filter-sort {padding: 0 0 16px 0;}
+	.filter-sort {
+		ul {list-style: none; text-align: center;}
+		ul {
+			li {display: inline-block; margin: 0 0; border-left: 1px solid @form_border;}
+			li:first-child {border-left: 0;}
+			li {
+				a {display: inline-block; padding: 0 6px; font-size: 17px;}
+				a {
+					icon {display: none; margin: 0 3px 0 0; transform: rotate(90deg);}
+				}
+			}
+			li.sel a icon {display: inline-block;}
+			li.desc a icon {transform: rotate(-90deg);}
+		}
+	}
+	.filter-text {
+		form {padding: 0;}
+	}
+	.filter-tags {
+		a[rel=all] {display: block; padding: 0 0 16px 0; text-align: center; font-size: 16px;}
+	}
+}
+
